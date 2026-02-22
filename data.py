@@ -7,7 +7,7 @@ TARGET_ROWS = 35000  # Fetch a bit more to allow for cleaning
 PAGE_SIZE = 1000      # Max allowed by API usually around 100-1000
 OUTPUT_FILE = "plastic_data.csv"
 
-# The specific columns you requested for your ML project
+# The specific columns for our project
 FIELDS = [
     "code",
     "product_name",
@@ -23,7 +23,7 @@ def fetch_plastic_data():
     all_products = []
     page = 1
     
-    print(f"🚀 Starting data mine for {TARGET_ROWS} products...")
+    print(f"Starting data mine for {TARGET_ROWS} products...")
     
     while len(all_products) < TARGET_ROWS:
         # Open Food Facts "Search" API Endpoint
