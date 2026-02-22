@@ -55,7 +55,7 @@ def fetch_plastic_data():
             print(f"   Collected {len(all_products)} / {TARGET_ROWS} rows... (Page {page})")
             
             page += 1
-            time.sleep(1.0) # Be nice to their API
+            time.sleep(10.0) # Be nice to their API
             
         except Exception as e:
             print(f"Error on page {page}: {e}")
