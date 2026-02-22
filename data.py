@@ -55,7 +55,10 @@ def fetch_plastic_data():
             print(f"   Collected {len(all_products)} / {TARGET_ROWS} rows... (Page {page})")
             
             page += 1
-            time.sleep(10.0) # Be nice to their API
+            time.sleep(10.0) # The website has about a ~6 second delay between allowing API requests. 
+                             # This buffer tries to mitigate getting timed out while running the scraper. 
+                             # I learned this when I accidentally deleted the .csv file after the first run 
+                             # and kept getting timed out when trying to generate a new file. 
             
         except Exception as e:
             print(f"Error on page {page}: {e}")
